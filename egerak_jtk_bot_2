@@ -43,17 +43,18 @@ async def send_summary(update: Update, context):
     # Get the current date in DD-MMM-YYYY format
     current_date = datetime.now().strftime("%d-%b-%Y")  # Format as DD-MMM-YYYY
 
-    summary = f"📅 *MAKLUMAT KEBERADAAN JTK PTIS LAHAT BAGI TARIKH {current_date}* 📅\n\n"
+    summary = f"📅 *Daily Report Summary for {current_date}* 📅\n\n"
     
     # Loop through each employee and display their report or show blank if not submitted
     for employee in employees:
         report = employee_reports.get(employee, "")  # Default to empty string if no report
         summary += f"👤 *{employee}*: {report}\n\n"  # Add two new lines for spacing
 
-    summary += "Terima kasih atas kerjasama anda. \nData ini akan dimasukkan ke Group Rasmi JTK Uptis Kinta Utara (Keberadaan). Terima kasih. KLIK /start semula untuk submit/update data lain" 
-            
+    summary += "Thank you for your submissions! If you have any updates, please let me know."
     
-    await update.message.reply_text(summary, parse_mode='Markdown')  # Enable Markdown formatting
+    # Send summary to the group
+    await context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode='Markdown')  # Use group chat_id
+
 
 
 
