@@ -3,7 +3,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters
 
 # List of employees (you can edit or expand this list)
-employees = ['MIZI', 'MEOR', 'YANA', 'SURAYA', 'NIENA', 'AZIE', 'MIRUL', 'YATT', 'NABIL', 'ARDY', 'NIENA', 'ZULIZA']
+employees = ['MOHD TARMIZI BIN CHE AHMAD', 'NOOR LIYANA BINTI MOHD AZMI', 'NOOR HAYATI BINTI ISA', 'ZULIZA SHUHADAH BT AHMAD GHAZALI', 'SURAYA BINTI ABDUL RASHID', 'NORAZIAH BINTI AHMAD', 'MEOR MOHAMAD HAFIZ BIN MEOR JAMALUDDIN ', 'ARDY SHAZRIL BIN AHMAD HUMAIRI', 'NOOR NABILFIKRI BIN NOOR RAHMAN', 'MOHD AMIRUL AKMAL BIN RAHIM', 'NOOR SURIANA BINTI MOHD NASIR']
 
 # Dictionary to store reports
 employee_reports = {}
@@ -54,7 +54,6 @@ async def send_summary(update: Update, context):
     
     # Send summary to the group
     await context.bot.send_message(chat_id=update.message.chat_id, text=summary, parse_mode='Markdown')  # Use group chat_id
-
 
 
 
