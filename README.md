@@ -24,12 +24,12 @@ EgerakBot is a Telegram bot designed to facilitate employee attendance reporting
    cd egerakbot
    
 **Create and activate a virtual environment:**
-```bash
+
 python3 -m venv mybotenv
 source mybotenv/bin/activate
 
 **Install the required packages:**
-```bash
+
 pip install -r requirements.txt
 Create a .env file in the project directory with your bot token and chat ID:
 
@@ -37,7 +37,7 @@ BOT_TOKEN=your_bot_token_here
 CHAT_ID=your_chat_id_here
 
 **Run the bot:**
-```bash
+
 python egerakbot.py
 
 **Usage**
