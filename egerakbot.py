@@ -27,10 +27,10 @@ day_translations = {
 day_in_malay = day_translations.get(day_of_week, day_of_week)
 
 # List of employees (you can edit or expand this list)
-employees = ['MOHD TARMIZI BIN CHE AHMAD', 'NOOR LIYANA BINTI MOHD AZMI', 'NOOR HAYATI BINTI ISA',
-             'ZULIZA SHUHADAH BT AHMAD GHAZALI', 'SURAYA BINTI ABDUL RASHID', 'NORAZIAH BINTI AHMAD',
-             'MEOR MOHAMAD HAFIZ BIN MEOR JAMALUDDIN', 'ARDY SHAZRIL BIN AHMAD HUMAIRI',
-             'NOOR NABILFIKRI BIN NOOR RAHMAN', 'MOHD AMIRUL AKMAL BIN RAHIM', 'NOOR SURIANA BINTI MOHD NASIR']
+employees = ['ALI', 'ABU', 'FIKRI',
+             'NIA', 'SANI', 'YUS',
+             'AINA', 'ZARA',
+             'FIRA', 'SYA', 'LIA']
 
 # Dictionary to store reports
 employee_reports = {}
@@ -76,7 +76,7 @@ async def send_summary(update: Update, context):
     # Get the current date in DD-MMM-YYYY format in the correct timezone
     current_date = datetime.now(tz).strftime("%d-%b-%Y")
 
-    summary = f"📅 *MAKLUMAT KEBERADAAN JTK PTIS LAHAT BAGI TARIKH {today.strftime('%d-%b-%Y')} ({day_in_malay})* 📅\n\n"
+    summary = f"📅 *MAKLUMAT KEBERADAAN PEGAWAI BAGI TARIKH {today.strftime('%d-%b-%Y')} ({day_in_malay})* 📅\n\n"
 
     # Loop through each employee and display their report or show "Belum Isi" if not submitted
     for employee in employees:
@@ -86,11 +86,11 @@ async def send_summary(update: Update, context):
     summary += ""
 
     # Post the summary to the channel
-    await context.bot.send_message(chat_id='-1002460295495', text=summary, parse_mode='Markdown')
+    await context.bot.send_message(chat_id='Your_Chat_ID', text=summary, parse_mode='Markdown')
 
 # Main function to handle bot events
 def main():
-    application = ApplicationBuilder().token('7672291464:AAHAZAPzEhOt0r4qPZ9G6S_Vhf35D031EAU').build()
+    application = ApplicationBuilder().token('YOUR_BOT_TOKEN').build()
 	
  # Initialize the scheduler
     scheduler = AsyncIOScheduler()
